@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Case Changer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-height: 95vh;
+            background: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-family: Roboto;
+            color: white;
+        }
+
+        .container {
+            width: 525px;
+            max-width: 100%;
+            margin: 0;
+            background: rgb(179, 138, 179);
+            padding: 30px 20px;
+            border-radius: 15px;
+        }
+
+        .box {
+            width: 500px;
+            max-width: 100%;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            resize: none;
+            font-family: Roboto;
+            font-size: 15px;
+            border-radius: 15px;
+        }
+
+        .button {
+            background-color: rgb(117, 117, 192);
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.15s;
+            transition: box-shadow 0.15s;
+
+        } .button:hover {
+            opacity: 0.7;
+            box-shadow: -3px -3px 10px rgba(0, 0, 0, 0.15);
+        } .button:active {
+            opacity: 0.3;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Change case of text</h1>
+        <textarea name="" id="input_box" cols="30" rows="10" class="box" required></textarea>
+        <textarea name="" id="output_box" cols="30" rows="10" class="box" readonly></textarea>
+        <input type="button" value="Change to Upper Case" onclick="change_case_upper()" class="button">
+        <input type="button" value="Change to Lower Case" onclick="change_case_lower()" class="button">
+    </div>
+    
+</body>
+<script>
+    const input_box = document.getElementById('input_box');
+    const output_box = document.getElementById('output_box');
+    const blank = "";
+
+    function change_case_upper() {
+        output_box.value = input_box.value.toUpperCase();
+    }
+
+    function change_case_lower() {
+        output_box.value = input_box.value.toLowerCase();
+    }
+</script>
+</html>
